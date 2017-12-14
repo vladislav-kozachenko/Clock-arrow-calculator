@@ -1,10 +1,11 @@
 package javaclasses.clock.impl;
 
 import com.google.common.base.Preconditions;
+import javaclasses.clock.ArrowAngleCalculator;
 
-public class ArrowAngleCalculatorImpl {
+public class IntegerArrowAngleCalculatorImpl implements ArrowAngleCalculator{
 
-    public int calculate(int hours, int minutes) {
+    public double calculate(int hours, int minutes) {
 
         validateArguments(hours, minutes);
 
@@ -13,11 +14,7 @@ public class ArrowAngleCalculatorImpl {
 
         final int result = Math.abs(hoursPosition - minutesPosition);
 
-        if (result <= 180) {
-            return result;
-        }
-
-        return 360 - result;
+        return result <= 180 ? result : 360 - result;
 
     }
 

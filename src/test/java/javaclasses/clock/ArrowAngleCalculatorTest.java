@@ -1,29 +1,29 @@
 package javaclasses.clock;
 
-import javaclasses.clock.impl.ArrowAngleCalculatorImpl;
+import javaclasses.clock.impl.IntegerArrowAngleCalculatorImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class ArrowAngleCalculatorTest {
 
-    private final ArrowAngleCalculatorImpl calculator = new ArrowAngleCalculatorImpl();
+    private final IntegerArrowAngleCalculatorImpl calculator = new IntegerArrowAngleCalculatorImpl();
 
     @Test
     public void testCalculate(){
-        final int result = calculator.calculate(6,15);
-        Assert.assertEquals(90, result);
+        final double result = calculator.calculate(6,15);
+        Assert.assertEquals(90, result, 0.00001);
     }
 
     @Test
     public void testCalculateCriticalValues(){
-        final int result = calculator.calculate(0,60);
-        Assert.assertEquals(0, result);
+        final double result = calculator.calculate(0,60);
+        Assert.assertEquals(0, result, 0.00001);
     }
 
     @Test
     public void testCalculateValues(){
-        final int result = calculator.calculate(9,30);
-        Assert.assertEquals(90, result);
+        final double result = calculator.calculate(9,30);
+        Assert.assertEquals(90, result, 0.00001);
     }
 
     @Test(expected = IllegalArgumentException.class)
