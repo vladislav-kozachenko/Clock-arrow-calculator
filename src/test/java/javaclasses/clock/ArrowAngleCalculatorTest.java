@@ -14,4 +14,19 @@ public class ArrowAngleCalculatorTest {
         Assert.assertEquals(90, result);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testWithInvalidArguments(){
+        calculator.calculate(-2,70);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testWithInvalidMinutes(){
+        calculator.calculate(0,70);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testWithInvalidHours(){
+        calculator.calculate(15,30);
+    }
+
 }
