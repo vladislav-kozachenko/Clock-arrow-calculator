@@ -3,7 +3,7 @@ package javaclasses.clock.impl;
 import com.google.common.base.Preconditions;
 import javaclasses.clock.ArrowAngleCalculator;
 
-public class IntegerArrowAngleCalculatorImpl implements ArrowAngleCalculator{
+public class SimpleArrowAngleCalculator extends ArrowAngleCalculator{
 
     public double calculate(int hours, int minutes) {
 
@@ -16,11 +16,6 @@ public class IntegerArrowAngleCalculatorImpl implements ArrowAngleCalculator{
 
         return result <= 180 ? result : 360 - result;
 
-    }
-
-    private void validateArguments(int hours, int minutes) {
-        Preconditions.checkArgument(hours >= 0 && hours <=12);
-        Preconditions.checkArgument(minutes >= 0 && minutes <=60);
     }
 
 }

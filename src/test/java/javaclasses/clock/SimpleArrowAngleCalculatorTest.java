@@ -1,12 +1,12 @@
 package javaclasses.clock;
 
-import javaclasses.clock.impl.IntegerArrowAngleCalculatorImpl;
+import javaclasses.clock.impl.SimpleArrowAngleCalculator;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ArrowAngleCalculatorTest {
+public class SimpleArrowAngleCalculatorTest {
 
-    private final IntegerArrowAngleCalculatorImpl calculator = new IntegerArrowAngleCalculatorImpl();
+    private final ArrowAngleCalculator calculator = new SimpleArrowAngleCalculator();
 
     @Test
     public void testCalculate(){
