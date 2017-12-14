@@ -10,7 +10,19 @@ public class ArrowAngleCalculatorTest {
 
     @Test
     public void testCalculate(){
-        final int result = calculator.calculate(0,15);
+        final int result = calculator.calculate(6,15);
+        Assert.assertEquals(90, result);
+    }
+
+    @Test
+    public void testCalculateCriticalValues(){
+        final int result = calculator.calculate(0,60);
+        Assert.assertEquals(0, result);
+    }
+
+    @Test
+    public void testCalculateValues(){
+        final int result = calculator.calculate(9,30);
         Assert.assertEquals(90, result);
     }
 
